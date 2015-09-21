@@ -92,6 +92,7 @@ command Lint
           end if
         end repeat
       end if
+      break
     case ".source.lcb"
       if there is not a folder tLCIDirectory then
         create folder tLCIDirectory
