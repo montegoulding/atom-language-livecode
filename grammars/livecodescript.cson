@@ -9,6 +9,7 @@
   'lc'
 ]
 'firstLineMatch': '^<\\?rev\\b|<\\?lc\\b|<\\?livecode\\b|#!.*\\b(livecode)|^#\\s*-\\*-[^*]*mode:\\s*livecodescript[^*]*-\\*-|script \"([A-Za-z_0-9]*)\"'
+'injectionSelector': 'text'
 'patterns': [
   {
     include: "#language"
