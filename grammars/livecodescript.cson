@@ -9,6 +9,7 @@
   'lc'
 ]
 'firstLineMatch': '^<\\?rev\\b|<\\?lc\\b|<\\?livecode\\b|#!.*\\b(livecode)|^#\\s*-\\*-[^*]*mode:\\s*livecodescript[^*]*-\\*-|script \"([A-Za-z_0-9]*)\"'
+'injectionSelector': 'text'
 'patterns': [
   {
     include: "#language"
@@ -69,25 +70,28 @@ repository:
         name: "comment.block.livecodescript"
       }
       {
-        captures:
-          "1":
-            name: "punctuation.definition.comment.livecodescript"
-        match: "(--).*?($\\n?)"
-        name: "comment.line.double-dash.livecodescript"
+        'begin': '--'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.double-dash.livecodescript'
+        'end': '\\n'
+        'name': 'comment.line.livecodescript'
       }
       {
-        captures:
-          "1":
-            name: "punctuation.definition.comment.livecodescript"
-        match: "(#).*?($\\n?)"
-        name: "comment.line.number-sign.livecodescript"
+          'begin': '#'
+          'beginCaptures':
+            '0':
+              'name': 'punctuation.definition.comment.number-sign.livecodescript'
+          'end': '\\n'
+          'name': 'comment.line.livecodescript'
       }
       {
-        captures:
-          "1":
-            name: "punctuation.definition.comment.livecodescript"
-        match: "(//).*?($\\n?)"
-        name: "comment.line.double-slash.livecodescript"
+        'begin': '//'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.double-slash.livecodescript'
+        'end': '\\n'
+        'name': 'comment.line.livecodescript'
       }
       {
         match: "\\b(after|byte(s)*|codepoint(s)*|codeunit(s)*|english|segment(s)*|sentence(s)*|paragraph|the|trueWord(s)*|until|word(s)*|http|forever|descending|using|line|real8|with|seventh|for|stdout|finally|element|word|fourth|before|black|ninth|sixth|characters|chars|stderr|uInt(1|1s|2|2s)|stdin|string|lines|relative|rel|any|fifth|items|from|middle|mid|at|else|of|catch|then|third|it|file|milli(seconds|second|secs|sec)|int(1|1s|4|4s|ernet|2|2s)|normal|text|item|last|long|detailed|effective|uInt4|uInt4s|se(conds|cond|cs|c)|repeat|end\\s+repeat|URL|in|end\\s+try|into|switch|end\\s+switch|to|words|https|token|binfile|each|tenth|as|ticks|tick|system|real4|by|dateItems|without|cha(r|racter)|ascending|eighth|whole|dateTime|numeric|short|first|ftp|integer|abbreviated|abb(r|rev)|private|case|while|if|end\\s+if)\\b"
