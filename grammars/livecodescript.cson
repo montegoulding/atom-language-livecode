@@ -117,8 +117,8 @@ repository:
           "3":
             name: "entity.name.function.livecodescript"
           "4":
-            name: "variable.parameter.livecodescript"
-        match: "(private\\s+)*((?i)function|on|command|before|after)\\s+([A-Za-z_0-9-]+)(\\s+[A-Za-z_0-9-]+,*?\\s+.*)*"
+            name: "punctuation.definition.variable.livecodescript"
+        match: "(private\\s+)*((?i)function|on|command|before|after)\\s+([A-Za-z_0-9-]+)(\\s+@*[A-Za-z_0-9-]+,*?\\s+.*)*"
         name: "meta.function.livecodescript"
       }
       {
